@@ -18,27 +18,22 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      // Webpack plugin that generates our html file and injects our bundles
-      new HtmlWebpackPlugin({
-        template: "./index.html",
-        title: "Text Editor",
-      }),
-
-      // Injects our custom service worker
-      new InjectManifest({
+       new InjectManifest({
         swSrc: "./src-sw.js",
         swDest: "src-sw.js",
       }),
-
-      // Creates a manifest.json file
+      new HtmlWebpackPlugin({
+        template: "./index.html",
+        title: "Text Editor",
+        chunks: ['main']
+      }),
       new WebpackPwaManifest({
+        name: "Just Another Text Editor",
+        shortname: "JATE",
         fingerprints: false,
         inject: true,
-        name: "Text Editor",
-        short_name: "Text",
-        description: "Keep you notes here!",
-        background_color: "#225ca3",
-        theme_color: "#225ca3",
+        description: "Single page browser ran text editor",
+        background_color: "#181818",
         start_url: "/",
         publicPath: "/",
         icons: [
