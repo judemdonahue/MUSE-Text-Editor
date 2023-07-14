@@ -33,6 +33,7 @@ module.exports = () => {
         fingerprints: false,
         inject: true,
         description: "Single page browser ran text editor",
+        theme_color: "#d9534f",
         background_color: "#181818",
         start_url: "/",
         publicPath: "/",
