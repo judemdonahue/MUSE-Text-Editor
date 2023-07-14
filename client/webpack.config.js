@@ -28,8 +28,8 @@ module.exports = () => {
         chunks: ['main']
       }),
       new WebpackPwaManifest({
-        name: "Just Another Text Editor",
-        shortname: "JATE",
+        name: "M>U>S>E",
+        shortname: "MUSE",
         fingerprints: false,
         inject: true,
         description: "Single page browser ran text editor",
@@ -38,7 +38,7 @@ module.exports = () => {
         publicPath: "/",
         icons: [
           {
-            src: path.resolve("src/images/logo.png"),
+            src: path.resolve("src/images/MUSElogo.png"),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join("assets", "icons"),
           },
